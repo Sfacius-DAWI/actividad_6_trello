@@ -20,7 +20,6 @@ boton_crear_selector.addEventListener('click', () => {
 });
 
 
-// Delegación de eventos para botones eliminación creados dinámicamente
  document.addEventListener('click', (e) => {
     if ( e.target.matches('.boton-eliminar') || e.target.matches('.eliminar-lista') ) {
         console.log('se ha seleccionado para eliminar');
