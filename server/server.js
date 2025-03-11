@@ -2,6 +2,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
+import testDbRoutes from './routes/test_db.js';
+import boxesRoutes from './routes/BoxesRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,10 +11,12 @@ const __dirname = path.dirname(__filename);
 const app = fastify({ logger: true });
 
 app.register(fastifyStatic, {
-  // Actualiza la ruta para que apunte a c:\Users\santi\Documents\actividad10_js\client\dist
   root: path.join(__dirname, '..', 'client', 'dist'),
   prefix: '/',
 });
+
+app.register(testDbRoutes);
+app.register(boxesRoutes);
 
 app.get('/', async (req, reply) => {
   return reply.sendFile('index.html');

@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS actividad10_js;
+USE actividad10_js;
+
+DROP TABLE IF EXISTS cards;
+DROP TABLE IF EXISTS boxes;
+
+CREATE TABLE boxes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE cards (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  box_id INT NOT NULL,
+  contenido TEXT,
+  CONSTRAINT fk_box
+    FOREIGN KEY (box_id) 
+      REFERENCES boxes(id)
+      ON DELETE CASCADE
+);
+

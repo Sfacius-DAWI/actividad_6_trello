@@ -23,7 +23,8 @@ export default {
                 options: {
                     objectAssign: 'Object.assign',
                     transforms: {
-                        modules: false
+                        modules: false,
+                        asyncAwait: false
                     }
                 },
             },

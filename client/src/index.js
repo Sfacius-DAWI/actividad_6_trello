@@ -7,7 +7,7 @@ console.log('el js sigue funcionando');
 addEventListener('DOMContentLoaded', () => {
     console.log('el evento DOMContentLoaded ha ocurrido');
     boton_crear()
-    cargartarjetas();
+    loadBoxesFromDb();
 
     const boton_crear_selector = document.getElementById('boton_crear_cajita')
 boton_crear_selector.addEventListener('click', () => {
@@ -52,10 +52,17 @@ document.addEventListener('dblclick', (event) => {
 
 
 
-const cargartarjetas = () => {
-    tarjeta_generica('por_hacer');
-    tarjeta_generica('processo');
-    tarjeta_generica('finalizada');
+
+const loadBoxesFromDb = async () => {
+  try {
+    const res = await fetch('/boxes');
+    const boxes = await res.json();
+    boxes.forEach(box => {
+      tarjeta_generica(box.titulo);
+    });
+  } catch (error) {
+    console.error('Error al cargar cajas desde la BD:', error);
+  }
 }
 
 const boton_crear = () => {
