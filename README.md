@@ -1,41 +1,55 @@
-# Documentación del Microservicio
+# Documentación del Proyecto
 
-## Descripción
-El microservicio está implementado con [Fastify](https://www.fastify.io/) y utiliza el plugin [@fastify/static](https://github.com/fastify/fastify-static) para servir archivos estáticos. Se configura para:
-- Servir archivos compilados desde el directorio `dist` en la raíz (`/`).
+Este proyecto es una aplicación web que utiliza Fastify para el servidor y Webpack para agrupar los archivos del frontend.
 
-## Endpoints
-- `/`  
-  Sirve el archivo `index.html` desde el directorio `dist`.  
-  ([server.js](server.js))
+## Prerrequisitos
+
+- [Node.js](https://nodejs.org/) instalado.
+- NPM (incluido con Node.js).
 
 ## Instalación
-1. Clonar el repositorio.
-2. Ejecutar `npm install` para instalar todas las dependencias.
+
+1. Clona el repositorio o descarga el código.
+2. Abre una terminal en la raíz del proyecto y ejecuta:
+
+    ```sh
+    npm install
+    ```
+
+## Modo Desarrollo
+
+1. Para compilar el código con Webpack y arrancar el servidor, ejecuta:
+
+    ```sh
+    npm run dev
+    ```
+
+2. La aplicación se iniciará en [http://localhost:3001](http://localhost:3001).
+
+## Ejecución en Producción
+
+1. Compila el bundle con Webpack:
+
+    ```sh
+    npm run build
+    ```
+
+2. Arranca el servidor:
+
+    ```sh
+    npm run start
+    ```
 
 ## Estructura del Proyecto
-- **/src**: Código fuente.
-- **/dist**: Archivos compilados.
-- **/img**: Recursos estáticos (imágenes).
 
-## Cómo compilar y ejecutar
-1. **Compilar**  
-   Utiliza Webpack para empaquetar el código.  
-   Ejecuta el siguiente comando:
-   ```sh
-   npm run build
-   ```
-   La configuración se encuentra en `webpack.config.mjs`.
+- **src/**: Código del frontend (JavaScript y CSS).
+- **server.js**: Servidor configurado con Fastify para servir los archivos estáticos.
+- **webpack.config.mjs**: Configuración de Webpack para agrupar el código.
 
-2. **Ejecutar**  
-   Inicia el microservicio ejecutando:
-   ```sh
-   npm run start
-   ```
-   El servidor se ejecuta en el puerto 3001.
+## Comandos NPM
 
-   la lista con los enlaces sale en cuento ejecutas el comando 
+- `npm install` - Instala las dependencias.
+- `npm run build` - Compila el proyecto con Webpack.
+- `npm run start` - Inicia el servidor.
+- `npm run dev` - Ejecuta el proceso de compilación y arranca el servidor en modo desarrollo.
 
-   ![alt text](image.png)
-
-   
