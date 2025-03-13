@@ -8,7 +8,7 @@ export default {
     entry: path.resolve(__dirname, 'src/index.js'), // se ajusta la ruta absoluta
     output: {
         filename: 'bundle.js',
-        path: path.resolve(process.cwd(), '../server/dist'), // salida para el servidor
+        path: path.resolve(process.cwd(), './server/dist'), // salida para el servidor
     },
     module: {
         rules: [

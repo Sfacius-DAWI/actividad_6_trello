@@ -19,7 +19,7 @@ app.register(testDbRoutes);
 app.register(boxesRoutes);
 
 app.get('/', async (req, reply) => {
-  return reply.sendFile('index.html');
+  return reply.sendFile('../client/dist/index.html');
 });
 
 const start = async () => {

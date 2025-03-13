@@ -7,7 +7,7 @@ console.log('el js sigue funcionando');
 addEventListener('DOMContentLoaded', () => {
     console.log('el evento DOMContentLoaded ha ocurrido');
     boton_crear()
-    loadBoxesFromDb();
+    loadBoxesFromDb()
 
     const boton_crear_selector = document.getElementById('boton_crear_cajita')
 boton_crear_selector.addEventListener('click', () => {
