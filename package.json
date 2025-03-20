@@ -10,7 +10,7 @@
   "name": "img",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {
     "buble": "^0.20.0",
     "buble-loader": "^0.5.1",

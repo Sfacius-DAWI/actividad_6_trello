@@ -24,11 +24,11 @@ app.get('/', async (req, reply) => {
 
 
 
-8
+const puerto = process.env.PORT || 3000;
 
 const start = async () => {
   try {
-    await app.listen({ port: 3001, host: '0.0.0.0' });
+    await app.listen({ port: puerto, host: '0.0.0.0' });
     app.log.info('Servidor corriendo en http://localhost:3000');
   } catch (err) {
     app.log.error(err);
